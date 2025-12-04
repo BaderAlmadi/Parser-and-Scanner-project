@@ -1,0 +1,40 @@
+1.  program → stmt_list $$
+
+2.  stmt_list → stmt stmt_list
+3.            | ε
+
+4.  stmt → id := expr
+5.       | read id
+6.       | write expr
+7.       | if condition then stmt_list end
+8.       | if condition then stmt_list else stmt_list end
+9.       | while condition do stmt_list end
+
+10. condition → expr comp_op expr
+
+11. comp_op → ==
+12.          | !=
+13.          | <
+14.          | >
+15.          | <=
+16.          | >=
+
+17. expr → term term_tail
+
+18. term_tail → add_op term term_tail
+19.           | ε
+
+20. term → factor fact_tail
+
+21. fact_tail → mult_op factor fact_tail
+22.           | ε
+
+23. factor → ( expr )
+24.        | id
+25.        | number
+
+26. add_op → +
+27.        | -
+
+28. mult_op → *
+29.         | /
