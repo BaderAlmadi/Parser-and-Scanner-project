@@ -4,7 +4,7 @@ echo "=== Simple Language Parser Build ==="
 echo ""
 
 # --- 1. Setup and Cleanup ---
-cd "scanner and parser file's directory" || exit
+cd "Enter scanner and parser file's directory" || exit
 echo "Cleaning old files..."
 rm -f parser parser.exe Parser2.0.tab.c Parser2.0.tab.h Scanner2.0.yy.c lex.yy.c *.o
 
@@ -45,3 +45,4 @@ echo ""
 echo "Output:"
 
 ./parser < test.txt
+
